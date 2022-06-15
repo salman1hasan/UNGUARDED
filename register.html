@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+        <title>Document</title>
+    </head>
+    <body>
+       
+    <section class="footer">
+        <ul class="list">
+            <li>
+                <a href="register.html">SIGN-UP</a> 
+            </li>
+            <li>
+                <a href="Home.html">HOME</a> 
+            </li>
+            <li>
+                <a href="About.html">ABOUT</a>
+            </li>
+            <li>
+                <a href="Content.html">CONTENT</a> 
+            </li>
+        </ul>
+    <br>
+    <div class="social">
+            <a href="https://www.youtube.com/c/UNGUARDED"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/theunguarded/"><i class="fab fa-instagram"></i></a>
+            <a href="https://story.snapchat.com/p/fd6a75d9-4d34-4a2b-89e1-33d8e8a9d7f4/1683521525870592"><i class="fab fa-snapchat"></i></a>
+            <p class="copyright">
+            @2022 UNGUARDED
+            </p>
+        </div>
+    </section>
+    <section>
+        <input type="checkbox" id="show">
+        <label for="show" class="show-btn">VIEW FORM</label>
+        <div class="container">
+            <h1>Sign Up</h1>
+            <label for="show" class="close-btn" title="close">&times;</label>
+            <form id="reg-form">
+                <label>NAME</label>
+                <input type="text" autocomplete="off" id="name"/>
+                <label>EMAIL</label>
+                <input type="email" autocomplete="off" id="email"/>
+                <label>PHONE NUMBER</label>
+                <input type="tel" autocomplete="off" id="phone"/>
+                <label>ADDRESS</label>
+                <input type="text" autocomplete="off" id="address"/>
+                <label>DOB</label>
+                <input type="date" autocomplete="off" id="dateofbirth"/>
+                <label>USERNAME</label>
+                <input type="text" autocomplete="off" id="username" />
+                <label>PASSWORD</label>
+                <input type="password" autocomplete="off" id="password"/>
+                <br>
+                <button>SUBMIT</button>
+            </form>
+        </div>
+    </section>
+        <script>
+            const form = document.getElementById('reg-form')
+            form.addEventListener('submit', registerUser)
+
+            // 1.send data as JSON (very common when you're using JS)
+            // 2.send data as urlencoded(very common when you're using JS)
+            async function registerUser(event) {
+                event.preventDefault()
+                const name = document.getElementById('name').value
+                const email = document.getElementById('email').value
+                const phone = document.getElementById('phone').value
+                const address = document.getElementById('address').value
+                const dateofbirth = document.getElementById('dateofbirth').value
+                const username = document.getElementById('username').value
+                const password = document.getElementById('password').value
+
+               const result = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        phone,
+                        email,
+                        address,
+                        dateofbirth,
+                        username,
+                        password
+                    })
+                }).then((res) => res.json())
+
+                if(result.status === 'ok'){
+                    alert('Success')
+                }else {
+                    alert(result.error)
+                }
+            }
+        </script>
+    </body>
+</html> 
