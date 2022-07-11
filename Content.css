@@ -4,63 +4,63 @@
     transition:.5s linear;
     font-family: 'Open Sans', sans-serif;
 }
-.container{
+.container1{
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 15px;
     align-items: flex-start;
     padding: 10px 5%;
 }
-.container .main-video{
+.container1 .main-video{
     background: #fff;
     border-radius: 5px;
     padding: 10px;
 }
-.container .main-video video{
+.container1 .main-video video{
     width: 100%;
     border-radius: 5px;
 }
-.container .main-video .title{
+.container1 .main-video .title{
     color: rgb(0, 0, 0);
     font-size:18px;
     padding-top:15px;
     text-align: center;
     font-family: monospace;
 }
-.container .video-list{
+.container1 .video-list{
     background: #fff;
     border-radius: 5px;
     height: 540px;
     overflow-y: scroll;
 }
-.container .main-video video:hover{
+.container1 .main-video video:hover{
     background: rgb(238, 237, 236);
     box-shadow: 0 0 0 1px rgb(255, 255, 255) inset;
     transition: .5s;
 }
-.container .video-list{
+.container1 .video-list{
     background: rgb(255, 255, 255);
     border-radius: 5px;
     border-color: black;
     height: 540px;
     overflow-y: scroll;
 }
-.container .video-list::-webkit-scrollbar{
+.container1 .video-list::-webkit-scrollbar{
     width: 7px;
 }
-.container .video-list::-webkit-scrollbar-track{
+.container1 .video-list::-webkit-scrollbar-track{
     background:rgb(241, 142, 43);
     border-radius: 50px;
 }
-.container .video-list .vid:hover{
+.container1 .video-list .vid:hover{
     background: rgb(0, 0, 0);
 
 }
-.container .video-list .vid video {
+.container1 .video-list .vid video {
     width:100px;
     border-radius: 5px;
 }
-.container .video-list .vid {
+.container1 .video-list .vid {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -70,40 +70,39 @@
     cursor: pointer;
     border-style: solid;
 }
-.container .video-list video{
+.container1 .video-list video{
     width: 100%;
     height: 105px;
     padding: 10px;
     cursor: pointer;
     display: flex;
 }
-.container .video-list.vid:hover{
+.container1 .video-list.vid:hover{
     background: rgb(0, 0, 0);
 }
-.container .video-list .vid.active{
+.container1 .video-list .vid.active{
     background: black;
 }
-.container .video-list .vid .title{
+.container1 .video-list .vid .title{
     color: rgb(246, 142, 77);
     font-size: 9px;
 }
-.container .video-list .vid .title .vid:hover{
+.container1 .video-list .vid .title .vid:hover{
     color: rgb(255, 253, 253);
     font-size: 9px;
 }
 @media(max-width: 991px){
-    .container{
+    .container1{
         grid-template-columns: 1fr 1fr;
         padding: 10px;
     }
 }
 @media(max-width: 768px){
-    .container{
+    .container1{
         grid-template-columns: 1fr;
     }
 }
 .banner-area{
-    background-image: url(images/UNGUARDED\ logo.png);
     background-color: black;
     background-size: cover;
     background-position: center center;
@@ -213,3 +212,29 @@
     background: rgb(246, 142, 77);
     transition: 1s;  
 }
+
+div#video_controls_bar{ 
+    background: rgb(247, 136, 25); 
+    padding: 10px; 
+    color: #ccc;
+    width: 100%;
+}
+input#seekslider {  
+    width: 300px; 
+}
+input#volumeslider {  
+    width: 80px;
+}
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#ccc;
+    height: 4px;
+}
+input[type='range']::-webkit-slider-thumb{
+     -webkit-appearance: none !important;
+     background: black;
+     height: 15px;
+     width: 15px;
+     border-radius: 100%;
+     cursor: pointer;
+    }

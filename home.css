@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open-Sans';
+}
+.btn.btn-orange{
+    background: rgb(241, 142, 43);
+    color: black;
+    border-color: black;
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-orange:hover{
+    background: transparent;
+    border-color: rgb(241, 142, 43);
+    color: #000;
+}
+.btn.btn-white{
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-white:hover{
+    background: black;
+    border-color: rgb(241, 142, 43);
+    color: #fff;
+}
+
+h1{
+    font-family: 'Open Sans';
+    font-weight: bold;
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-size:3.0em;
+}
+h2{
+    font-family: 'Open Sans';
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-weight: bold;
+    font-size:1.0vmin;
+}
+h3{
+    font-family: 'Open Sans';
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-weight: bold;
+    font-size:1.5vmin;
+}
+h4{
+    font-family: 'Open Sans';
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-weight: bold;
+    font-size:1.0vmin;
+}
+h5{
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-weight: bold;
+    font-size:1.0vmin;
+}
+h6{
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-weight: bold;
+    font-size:1.0vmin;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 30px;
+  }
+
+
