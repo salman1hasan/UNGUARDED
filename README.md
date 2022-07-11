@@ -1,5 +1,7 @@
 # UNGUARDED // Website still in production (HTML CSS JS)
 
+Update | Using React to build this website out with react-router dom. Created a signin that is connected to mongodb. Working on connecting a formik form to a mongodb server.
+
 https://vimeo.com/721953612 [Screen recording of website], 
 Content and images are not available on project due to copyright protection.
 
