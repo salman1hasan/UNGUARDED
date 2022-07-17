@@ -1,6 +1,6 @@
 # UNGUARDED // Website still in development (HTML CSS JS)
 
-I am currently working on a custom video player
+I am currently working on a custom video player. Template video player was built using material-ui. Dealing with functionality issues of the seekbar, but should get it to work. At this time working on an audio player, to see if I can get the seek bar to function this way I can try to insert that code into the custom video player.
 
 
 UNGUARDED Project 
