@@ -1,55 +1,56 @@
-import React, {useState} from 'react'
-import Logo from '../src/pages/images/ug.png'
-import './navbar.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faVideo } from '@fortawesome/free-solid-svg-icons'
-import { faUpload } from '@fortawesome/free-solid-svg-icons'
-import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom"
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle"
+import {Button,Container,Form,Nav,Navbar} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import ug from '../pages/images/ug.png'
+import './Navbar.css'
+import { FaHome } from 'react-icons/fa'
+import { FaVideo } from 'react-icons/fa'
+import { FaUpload } from 'react-icons/fa'
+import { FaMoneyBill} from 'react-icons/fa'
 
 
 
- 
-const Navbar = () => {
-    const[click, setClick] = useState(false)
-    //const handleClick = () => setClick(!click)
-    //const[isMobile,setIsMobile] = useState(false);
-    
-    return (
-        <header>
-            <nav className='navbar'>
-                <div className='logo'>
-                    <Link to='/'><img src={Logo} alt=''/></Link>
-                </div>
-                <ul className={click ? "nav-menu active": 'nav-menu'}>
-                    <li className='nav-item'>
-                         <Link to='/'  className='nav-link'>HOME
-                         <FontAwesomeIcon icon={faHome} className="fa-icon" transform="up-25 left-33" size="1x" color="rgb(255, 152, 7)"/>
-                         </Link>
-                        </li>
-                    <li className='nav-item' >
-                        <Link to='/content'  className='nav-link'>CONTENT
-                        <FontAwesomeIcon icon={faVideo} transform="up-25 left-43" size="1x" color="rgb(249, 137, 25)"/>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/upload' className='nav-link'>UPLOAD
-                        <FontAwesomeIcon icon={faUpload} transform="up-26 left-40" size="1x" color="rgb(255, 152, 7)"/>
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/bank' className='nav-link'>BANK
-                        <FontAwesomeIcon icon={faMoneyBill} transform="up-24 left-30"  size="1x" color="rgb(255, 152, 7)"/>
-                        </Link>
-                    </li>
-                </ul>
-                <Link to="/signin">
-                    <button class="button-8" role="button">SIGN-IN</button>
-                    </Link>
-            </nav> 
-        </header>
-    )
+function NavScrollExample() {
+  return (   
+    <Navbar sticky="top" expand="md">
+      <Container fluid>
+        <Navbar.Brand as={Link} to="/Home"> <img
+              src={ug}
+              width="40"
+              height="40"
+              alt=""
+            /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll>
+            <Nav.Link as={Link} className="inactive" to="/Home"><FaHome size='1.2rem'/>HOME</Nav.Link>
+            <Nav.Link as={Link} className="inactive" to="/Content"><FaVideo size='1.2rem'/>CONTENT</Nav.Link>
+            <Nav.Link as={Link} className="inactive" to="/Upload"><FaUpload size='1.2rem'/>UPLOAD</Nav.Link>
+            <Nav.Link as={Link} className="inactive" to="/Bank"><FaMoneyBill size='1.2rem'/>BANK</Nav.Link>
+         
+          </Nav>
+          <Form className="d-flex">
+          <Link to="/signup">
+          <Button className="button">SIGNUP</Button>
+          </Link>
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button className="button1">SEARCH</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  
+  );
 }
 
-export default Navbar;
+export default NavScrollExample;
