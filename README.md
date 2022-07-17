@@ -1,4 +1,6 @@
-# UNGUARDED // Website still in production (HTML CSS JS)
+# UNGUARDED // Website still in development (HTML CSS JS)
+
+I am currently working on a custom video player
 
 
 UNGUARDED Project 
